@@ -13,9 +13,9 @@ class DIContainer {
     
     private init() {}
     
-//    private let networkProvider: NetworkProvider = URLSessionProvider()
-//    private lazy var networkClient: NetworkClient = DefaultNetworkClient(provider: networkProvider)
-//    
-//    lazy var weatherService: WeatherService = WeatherServiceImpl(networkClient: networkClient)
-//    let locationService: LocationService = LocationServiceImpl()
+    private let networkProvider: NetworkProvider = URLSessionProvider()
+    private lazy var networkClient: NetworkClient = DefaultNetworkClient(provider: networkProvider)
+    
+    lazy var weatherService: WeatherService = WeatherServiceImpl(networkClient: networkClient)
+    let locationService: LocationService = LocationServiceImpl()
 }
