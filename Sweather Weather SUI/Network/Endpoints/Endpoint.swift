@@ -47,4 +47,15 @@ extension Endpoint {
 
         return request
     }
+    
+    static func makeRequest(from urlString: String, method: HTTPMethod = .get) throws -> URLRequest {
+        guard let url = URL(string: urlString) else {
+            throw NetworkError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        
+        return request
+    }
 }
