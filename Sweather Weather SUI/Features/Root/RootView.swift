@@ -10,11 +10,13 @@ import SwiftUI
 struct RootView: View {
     @StateObject private var rootCoordinator = RootCoordinator()
     
+    private var viewModel = MainViewModel(weatherService: DIContainer.shared.weatherService, locationService: DIContainer.shared.locationService)
+    
     var body: some View {
         Group {
             switch rootCoordinator.currentFlow {
             case .main:
-                MainView()
+                MainView(viewModel: viewModel)
             }
         }
         .animation(.default, value: rootCoordinator.currentFlow)
